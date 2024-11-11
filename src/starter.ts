@@ -12,13 +12,13 @@ const isNewInterface =
 
 if (isNewInterface) {
   addStyles();
-  await loadAddons();
   waitFor(
     function () {
       // czekaj na pelne zaladowanie gry
       return window.Engine && window.Engine.allInit;
     },
     async function () {
+      await loadAddons();
       await main();
     },
   );

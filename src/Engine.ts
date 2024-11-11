@@ -1,4 +1,5 @@
 import { customWindow } from './Types/Window';
+import { sleep } from './Utils';
 
 declare const window: customWindow;
 const Engine = window.Engine;
@@ -84,3 +85,13 @@ export const getWindowByName = (name: string) =>
 
 export const getWorldName = () => window.location.host.split('.margonem.pl')[0];
 export const getHeroNickname = () => Engine.hero.getNick();
+``;
+export const acceptLoot = (itemsCount: number) => {
+  const freeSlots = Engine.heroEquipment.getFreeSlots();
+  if (freeSlots >= itemsCount) {
+    Engine.hotKeys.hotAcceptLoot();
+  } else {
+    sleep(3000);
+  }
+};
+export const playerInParty = () => typeof Engine.party == 'object';
