@@ -1,7 +1,7 @@
 import { addStyles } from './addStyles';
 import { customWindow } from './Types/Window';
 import { waitFor } from './Utils';
-// import { main } from './main';
+import { main } from './main';
 import { loadAddons } from './addons';
 
 declare const window: customWindow;
@@ -19,7 +19,7 @@ if (isNewInterface) {
       return window.Engine && window.Engine.allInit;
     },
     async function () {
-      // await main();
+      await main();
     },
   );
 }

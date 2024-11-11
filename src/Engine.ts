@@ -81,3 +81,6 @@ export const getWindowsList = () => Engine.windowManager.getList();
 
 export const getWindowByName = (name: string) =>
   Engine.windowManager.getWndByLinkedWidgetName(name);
+
+export const getWorldName = () => window.location.host.split('.margonem.pl')[0];
+export const getHeroNickname = () => Engine.hero.getNick();
