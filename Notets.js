@@ -50,3 +50,21 @@ Engine.windowManager.add({
     w();
   },
 });
+
+windows['TESTOWY'][0].addToAlertLayer();
+
+_g(
+  `enhancement&action=progress&item=1113279812&ingredients=1113268219,1113339036,1113268218`,
+  void 0,
+);
+// const getItems = () => {
+//   const itemsArray = [];
+//   const items = Engine.heroEquipment.getHItems();
+//   Object.keys(items).forEach((item) => {
+//     itemsArray.push(items[item]);
+//   });
+
+//   return itemsArray;
+// };
+//ITEM#d7aa44c05e8d364dac2bd26dbb17ab1ad1390e2e83a205ace540cb6d7b24499d.eternia
+//d7aa44c05e8d364dac2bd26dbb17ab1ad1390e2e83a205ace540cb6d7b24499d

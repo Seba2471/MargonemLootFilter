@@ -44,3 +44,40 @@ export const addDefaultWidget = (
   // eslint-disable-next-line @typescript-eslint/ban-types
   clb: Function,
 ) => Engine.widgetManager.addKeyToDefaultWidgetSet(n, i, pos, txt, type, clb);
+export const getWindowsData = () => Engine.windowsData.name;
+export const setWindowsData = (newWindowsData: unknown) =>
+  (Engine.windowsData.name = newWindowsData);
+
+export const addWindowToManager = (
+  name: string,
+  title: string,
+
+  content: HTMLDivElement,
+  onClose: () => void,
+) => {
+  Engine.windowManager.add({
+    content: content,
+    title: title,
+    nameWindow: name,
+    widget: name,
+    type: Engine.windowsData.type.TRANSPARENT,
+    manageOpacity: 3,
+    managePosition: {
+      x: 251,
+      y: 60,
+    },
+    manageShow: 0,
+    addClass: name,
+    onclose: onClose,
+  });
+
+  const windows = getWindowsList();
+  windows[name][0].addToAlertLayer();
+  windows[name][0].hide();
+  windows[name][0].addClass('loot-filter-window');
+};
+
+export const getWindowsList = () => Engine.windowManager.getList();
+
+export const getWindowByName = (name: string) =>
+  Engine.windowManager.getWndByLinkedWidgetName(name);

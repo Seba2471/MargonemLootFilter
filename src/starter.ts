@@ -2,7 +2,7 @@ import { addStyles } from './addStyles';
 import { customWindow } from './Types/Window';
 import { waitFor } from './Utils';
 // import { main } from './main';
-import { widgets } from './widgets';
+import { loadAddons } from './addons';
 
 declare const window: customWindow;
 
@@ -12,7 +12,7 @@ const isNewInterface =
 
 if (isNewInterface) {
   addStyles();
-  await widgets();
+  await loadAddons();
   waitFor(
     function () {
       // czekaj na pelne zaladowanie gry
